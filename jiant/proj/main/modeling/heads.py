@@ -116,7 +116,7 @@ class RegressionHead(BaseHead):
         return scores
 
 
-@JiantHeadFactory.register([TaskTypes.SPAN_COMPARISON_CLASSIFICATION])
+@JiantHeadFactory.register([TaskTypes.SPAN_COMPARISON_CLASSIFICATION, TaskTypes.MULTI_LABEL_SPAN_CLASSIFICATION])
 class SpanComparisonHead(BaseHead):
     def __init__(self, task, hidden_size, hidden_dropout_prob, **kwargs):
         """From RobertaForSpanComparisonClassification"""
