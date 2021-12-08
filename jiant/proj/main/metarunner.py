@@ -159,7 +159,8 @@ class JiantMetarunner(AbstractMetarunner):
         return (self.train_state.global_steps + 1) % self.eval_every_steps == 0
 
     def eval_model(self):
-        self.eval_save()
+        # self.eval_save()
+	pass
 
     def should_break_training(self) -> bool:
         if compare_steps_max_steps(
@@ -181,7 +182,7 @@ class JiantMetarunner(AbstractMetarunner):
     def done_training(self):
         if self.save_last_model:
             self.save_last_model_with_metadata()
-        self.eval_save()
+        # self.eval_save()
         if self.load_best_model and self.best_state_dict is not None:
             if self.verbose:
                 print("Loading Best")
