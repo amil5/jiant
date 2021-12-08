@@ -154,9 +154,9 @@ def main(args: RunConfiguration):
     
     # As the GPT-2 tokenizer does not enable CLS or SEP token, set these to be null
     if args.hf_pretrained_model_name_or_path == "gpt2":
-	tokenizer = AutoTokenizer.from_pretrained(args.hf_pretrained_model_name_or_path, use_fast=False, cls_token='', sep_token='')
+        tokenizer = AutoTokenizer.from_pretrained(args.hf_pretrained_model_name_or_path, use_fast=False, cls_token='', sep_token='')
     else:
-    	tokenizer = AutoTokenizer.from_pretrained(args.hf_pretrained_model_name_or_path, use_fast=False)
+        tokenizer = AutoTokenizer.from_pretrained(args.hf_pretrained_model_name_or_path, use_fast=False)
     if isinstance(args.phases, str):
         phases = args.phases.split(",")
     else:
