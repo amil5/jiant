@@ -211,7 +211,7 @@ class JiantTransformersModel(metaclass=abc.ABCMeta):
             output_hidden_states=output_hidden_states,
         )
         return JiantModelOutput(
-            pooled=output.pooler_output,
+            pooled=None, # output.pooler_output,
             unpooled=output.last_hidden_state,
             other=output.hidden_states,
         )
